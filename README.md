@@ -9,4 +9,32 @@ same variable in abstract class , interface can't contain constructor but
 abstract class can , interface with single abstract method can refer lamda 
 expression but abstrac class not
 
+# Types of Functional Interface<br>
+####1. Predicate
+####2. Function
+####3. Consumer
+####4. Supplier
+<br>
+
+all these predefined functional interfaces are present in java.util.Function
+package 
+
+some example like Comparable contain only one abstract method called 
+compareTo()
+
+Runnable contain only one abstract method called run()
+
+
+####1. Predicate
+
+Predicate is a kind of Functional Interface that perform conditional check
+and return boolean value based on some condition , we can use predicate 
+to check conditional checking . for example employee sal > 10000 or not it 
+gives boolean value result called as Predicate . Predicate is a functional 
+interface because Predicate interface contains one abstract method called 
+test() 
+
+#### complete prototype -> interface Predicate<T>{
+	boolean test(T t);
+}
 
