@@ -63,7 +63,7 @@ interface Function<T,R>{
 	<R> apply(T t);	
 }
 
-difference b/w predicate and function is predicate always return boolean 
+### Q. difference b/w predicate and function is predicate always return boolean 
 type value but function can return any type of value 
 
 predicate contain one abstract method called test() which can perform 
@@ -129,7 +129,7 @@ Streams
 Ans : IO Streams means for representing data wrt to file IO operations
 but util package streams can be used to process data from collection
 
-### Q. Difference b/w Collectin & Stream<br>
+### Q. Difference b/w Collection & Stream<br>
 Ans: If we want to represent a group of objects as a single entity then we 
 should go for Collection object
 
