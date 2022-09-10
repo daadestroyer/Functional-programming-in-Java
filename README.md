@@ -120,3 +120,18 @@ interface Supplier<R>{
 }
 
 get() won't take any args and return some value.
+
+# Streams API<br>
+If we want to process objects from collection then we should have to use 
+Streams
+
+Q. Difference b/w IO Streams and Collection Streams<br>
+Ans : IO Streams means for representing data wrt to file IO operations
+but util package streams can be used to process data from collection
+
+Q. Difference b/w Collectin & Stream
+Ans: If we want to represent a group of objects as a single entity then we 
+should go for Collection object
+
+If we want to process Collection object and perform some operations then 
+we should go for Streams
