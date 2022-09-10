@@ -125,13 +125,41 @@ get() won't take any args and return some value.
 If we want to process objects from collection then we should have to use 
 Streams
 
-Q. Difference b/w IO Streams and Collection Streams<br>
+### Q. Difference b/w IO Streams and Collection Streams<br>
 Ans : IO Streams means for representing data wrt to file IO operations
 but util package streams can be used to process data from collection
 
-Q. Difference b/w Collectin & Stream
+### Q. Difference b/w Collectin & Stream<br>
 Ans: If we want to represent a group of objects as a single entity then we 
 should go for Collection object
 
 If we want to process Collection object and perform some operations then 
 we should go for Streams
+
+Stream is an interface present in java.util.Stream package , any 
+Collection object can call stream() default method 
+
+
+Stream s = c.stream(); // c is a Collection object
+
+Once we can get Stream object of any Collection then we can process that 
+Collection object , and that processing contains two steps:
+
+1. Configuration <br>
+
+	a) Filter mechanism -> we perform filteration based on some 
+ 	   boolean condition , in filteration we are taking out some 
+	   elements at that time we have to use map()
+
+example : alist.streams(num->num%2==0).collect(Collectors.toList());
+	
+	b) Map mechanism -> In map we are making changes in Collection 
+	   object and in this case we are not filtering elements then we 
+	   have to use map()   
+
+example : alist.streams().map(num->num*2).collect(Collectors.toList());
+
+2. Processing	
+
+Processing by sorted() method<br>
+
