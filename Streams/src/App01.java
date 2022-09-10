@@ -55,5 +55,25 @@ public class App01 {
 		
 		long count = aList3.stream().filter(name->name.length()>5).count();
 		System.out.println(count);
+		
+		
+		System.out.println();
+		
+		ArrayList<Integer> alist = new ArrayList<Integer>(); 
+		alist.add(0);
+		alist.add(10);
+		alist.add(20);
+		alist.add(5);	
+		alist.add(15);
+		alist.add(25); 
+		System.out.println(alist); // [0,10,20,25,5,15];
+
+		List<Integer> resList = alist.stream().sorted().collect(Collectors.toList());
+		System.out.println(resList); // [0,5,10,15,20,25];
+		
+		System.out.println();
+		
+		List<Integer> resList2 = alist.stream().sorted((i1,i2)->-i1.compareTo(i2)).collect(Collectors.toList());
+		System.out.println(resList2); // [25,20,15,10,5,0]; (descending order)<br>
 	}
 }

@@ -1,6 +1,6 @@
 # Functional-programming-in-Java
 
-### Q. if you add concrete method in interface then what is the difference b/w interface and abstract class<br>
+### <b> Q. if you add concrete method in interface then what is the difference b/w interface and abstract class<br></b>
 default method present in interface is used to provide dummy 
 implementation to all the implementation child classes , even if you are 
 adding concrete method in interface still there is a lot of difference 
@@ -63,8 +63,7 @@ interface Function<T,R>{
 	<R> apply(T t);	
 }
 
-### Q. difference b/w predicate and function is predicate always return boolean 
-type value but function can return any type of value 
+### <b> Q. difference b/w predicate and function is predicate always return boolean type value but function can return any type of value </b>
 
 predicate contain one abstract method called test() which can perform 
 operation and can return boolean value
@@ -73,12 +72,12 @@ function contain one abstract method called as apply() which can perform
 operation and can return any type of value
 
 
-Q. Write a function that take string and return length
+### <b> Q. Write a function that take string and return length </b>
 
 Function<String,Integer> f1 = (s)->s.length()
 
 
-#### difference b/w predicate and function
+### <b> difference b/w predicate and function </b>
 1. To implement conditional check , we should go for predicate
    <br>
    To perform certaiin operation and to return some result we should go 
@@ -100,7 +99,7 @@ Function<String,Integer> f1 = (s)->s.length()
    Function can return any type of value
 
 
-#### 3. Consumer
+#### <b> 3. Consumer </b>
 Consumer is a type of Functional Interface that contain one abstract method 
 called accept() and it accept value of any type and won't return anything
 
@@ -110,7 +109,7 @@ interface Consumer<T>{
 
 this T type parameter is input type parameter
 
-#### 4. Supplier
+#### <b> 4. Supplier </b>
 Supplier is a type of Functional Interface that contain one abstract method 
 called get() which won't take anything as input but can return anything of 
 anytype
@@ -125,11 +124,11 @@ get() won't take any args and return some value.
 If we want to process objects from collection then we should have to use 
 Streams
 
-### Q. Difference b/w IO Streams and Collection Streams<br>
+### <b>  Q. Difference b/w IO Streams and Collection Streams<br> </b>
 Ans : IO Streams means for representing data wrt to file IO operations
 but util package streams can be used to process data from collection
 
-### Q. Difference b/w Collection & Stream<br>
+### <b> Q. Difference b/w Collection & Stream<br> </b>
 Ans: If we want to represent a group of objects as a single entity then we 
 should go for Collection object
 
@@ -145,7 +144,7 @@ Stream s = c.stream(); // c is a Collection object
 Once we can get Stream object of any Collection then we can process that 
 Collection object , and that processing contains two steps:
 
-1. Configuration <br>
+### <b> 1. Configuration <br> </b>
 
 	a) Filter mechanism -> we perform filteration based on some 
  	   boolean condition , in filteration we are taking out some 
@@ -159,7 +158,36 @@ example : alist.streams(num->num%2==0).collect(Collectors.toList());
 
 example : alist.streams().map(num->num*2).collect(Collectors.toList());
 
-2. Processing	
+### <b> 2. Processing</b>
 
-Processing by sorted() method<br>
+#### <u> Processing by sorted() method<br>	</u>
+
+* We can use sorted() method to sort elements inside Stream
+* We can sort either based on default natural sorting order or 
+based on our own customized sorting order specified by comparator
+object<br> 
+		1. sorted() => for default natural sorting order
+		<br>
+		2. sorted(Comparator c) => for customized natural sorting order
+
+for string default natural sorting order is based on alphabetical order of elements
+
+
+ArrayList<Integer> alist = new ArrayList<Integer>(); <br>
+alist.add(0);<br>
+alist.add(10);<br>
+alist.add(20);<br>
+alist.add(5);	<br>
+alist.add(15);<br>
+alist.add(25);<br>
+System.out.println(alist); // [0,10,20,25,5,15];<br>
+
+List<Integer> resList = alist.stream().sorted().collect(Collectors.toList());<br>
+System.out.println(resList); // [0,5,10,15,20,25]; (ascending order)<br>
+
+
+List<Integer> resList2 = alist.stream().sorted((i1,i2)->-i1.compareTo(i2)).collect(Collectors.toList());<br>
+System.out.println(resList2); // [25,20,15,10,5,0]; (descending order)<br>
+
+
 
