@@ -190,4 +190,32 @@ List<Integer> resList2 = alist.stream().sorted((i1,i2)->-i1.compareTo(i2)).colle
 System.out.println(resList2); // [25,20,15,10,5,0]; (descending order)<br>
 
 
+<b>// find min and max in the list<br><br></b>
+<b>min(Comparator C)</b><br>
+returns minimum values according to specified comparator<br><br>
+<b>max(Comparator C)</b><br>
+returns maximum values according to specified comparator
 
+	ArrayList<Integer> lst = new ArrayList<Integer>();
+	lst.add(0);
+	lst.add(10);
+	lst.add(20);
+	lst.add(5);
+	lst.add(15);
+	lst.add(25);
+
+	Integer minVal = lst.stream().min((i1,i2)->i1.compareTo(i2)).get();
+	System.out.println(minVal);
+
+	Integer maxVal = lst.stream().max((i1,i2)->i1.compareTo(i2)).get();
+	System.out.println(maxVal);
+
+<b>Processing by using forEach() method : </b><br>
+This method won't return anything<br>
+
+This method can take Lambda expression as argument and apply that  lambda expression for each elements present in the Stream
+
+	ArrayList<String> lst = new ArrayList<String>();
+	lst.add("Shubham");
+	lst.add("Shubhanshu");
+	lst.add("Ansh");
